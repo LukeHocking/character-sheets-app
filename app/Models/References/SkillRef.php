@@ -1,6 +1,6 @@
 <?php
 
-namespace CharacterSheets;
+namespace CharacterSheets\Models\References;
 
 use Illuminate\Database\Eloquent\Model;
 

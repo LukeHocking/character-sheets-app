@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="card-body">
-                    <a href='user/profile/{{ Auth::user()->id }}'>Continue</a>
+                    <a href=" {{route('profile', [Auth::user()->id])}}">Continue</a>
                 </div>
             </div>
         </div>

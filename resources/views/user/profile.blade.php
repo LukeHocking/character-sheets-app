@@ -9,12 +9,12 @@
 
                 @foreach ($user->characters as $character)
                 <div class="card-body">
-                    <a href='/character/sheet/{{$character->id}}'>{{ $character->name }}</a>
+                    <a href="{{route('character.sheet.show', [$character->id])}}">{{ $character->name }}</a>
                 </div>
                 @endforeach
                 
                 <div class="card-body">
-                    <a href='/character/create'>Create New Character</a>
+                    <a href="{{route('character.sheet.new')}}">Create New Character</a>
                 </div>
             </div>
         </div>

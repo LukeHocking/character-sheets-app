@@ -8,9 +8,19 @@
                 <div class="card-header">{{ __('Create Character') }}</div>
 
                 <div class="card-body container">
-                    <form method="POST" action="/character/save">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                    <form method="POST" action="{{ route('character.store', ['user', Auth::id()]) }}">
                         @csrf
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                        <input type='hidden' name='user_id' value='{{Auth::id()}}'>
                         
                         <div class="row">
                             <div class="column p-1 w-100">
@@ -174,7 +184,7 @@
                         <div class="">
                             <div class="col-md-6 pt-3 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Save Character') }}
+                                    Save Character
                                 </button>
                             </div>
                         </div>

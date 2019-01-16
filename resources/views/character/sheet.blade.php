@@ -10,7 +10,6 @@
                 <div class="card-body container">
                     <form method="POST" action="/character/update">
                         @csrf
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         <input type="hidden" name="character_id" value="{{$character->id}}">
                         
                         <div class="row">

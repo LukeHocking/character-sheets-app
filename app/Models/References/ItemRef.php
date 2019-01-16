@@ -1,6 +1,6 @@
 <?php
 
-namespace CharacterSheets;
+namespace CharacterSheets\Models\References;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +14,6 @@ class ItemRef extends Model
     
     // Get this item's category
     public function category() {
-        return $this->belongsTo('CharacterSheets\Category');
+        return $this->belongsTo('CharacterSheets\Models\References\Category');
     }
 }

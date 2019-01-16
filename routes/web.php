@@ -17,11 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')
+    ->name('home');
 
-Route::get('/user/profile/{id}', 'UserController@show')->name('profile')->middleware('auth');;
+Route::get('/user/profile/{user}', 'UserController@show')
+    ->name('profile')
+    ->middleware('auth');
 
-Route::get('character/create', 'CharacterController@create')->middleware('auth');;
-Route::get('character/sheet/{id}', 'CharacterController@show')->middleware('auth');;
-Route::post('character/save', 'CharacterController@store')->middleware('auth');;
-Route::post('character/update', 'CharacterController@update')->middleware('auth');;
+Route::get('/character/create', 'CharacterController@new')
+    ->name('character.sheet.new');
+
+Route::post('/user/profile/{user}', 'CharacterController@create')
+    ->name('character.store');
+    
+Route::get('character/sheet', 'CharacterController@show')
+    ->name('character.sheet.show')
+    ->middleware('auth');
+    
+Route::post('character/update', 'CharacterController@update')
+    ->name('character.sheet.update')
+    ->middleware('auth');
