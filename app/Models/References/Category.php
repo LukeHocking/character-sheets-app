@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CharacterSheets;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,6 @@ class Category extends Model
     
     // Get this category's items
     public function items() {
-        return $this->hasMany('App\Item');
+        return $this->hasMany('CharacterSheets\Item');
     }
 }

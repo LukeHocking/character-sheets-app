@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CharacterSheets;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,26 +16,26 @@ class Character extends Model
     
     // Get this character's user
     public function user() {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('CharacterSheets\User');
     }
     
     // Get this character's class
     public function training() {
-        return $this->hasOne('App\Training');
+        return $this->hasOne('CharacterSheets\Training');
     }
     
     // Get this character's armour
     public function item() {
-        return $this->hasOne('App\Item');
+        return $this->hasOne('CharacterSheets\Item');
     } 
     
     // Get this character's skills
     public function skills() {
-        return $this->hasMany('App\Skill');
+        return $this->hasMany('CharacterSheets\Skill');
     }
     
     // Get this character's proficiencies
     public function proficiencies() {
-        return $this->hasMany('App\Proficiency');
+        return $this->hasMany('CharacterSheets\Proficiency');
     }
 }

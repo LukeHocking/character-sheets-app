@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CharacterSheets;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,6 @@ class SkillRef extends Model
     
     // Get this skill's class
     public function training() {
-        return $this->belongsTo('App\Training');
+        return $this->belongsTo('CharacterSheets\Training');
     }
 }

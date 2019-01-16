@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CharacterSheets;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -30,6 +30,6 @@ class User extends Authenticatable
     
     // Get this user's characters
     public function characters() {
-        return $this->hasMany('App\Character');
+        return $this->hasMany('CharacterSheets\Character');
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CharacterSheets\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Character;
-use App\Training;
-use App\TrainingRef;
-use App\Category;
-use App\Item;
-use App\ItemRef;
-use App\SkillRef;
+use CharacterSheets\Character;
+use CharacterSheets\Training;
+use CharacterSheets\TrainingRef;
+use CharacterSheets\Category;
+use CharacterSheets\Item;
+use CharacterSheets\ItemRef;
+use CharacterSheets\SkillRef;
 
 class CharacterController extends Controller
 {

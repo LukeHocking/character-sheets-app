@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CharacterSheets;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,6 @@ class TrainingRef extends Model
     
     // Get this class's skills
     public function skills() {
-        return $this->hasMany('App\SkillRef');
+        return $this->hasMany('CharacterSheets\SkillRef');
     }
 }
