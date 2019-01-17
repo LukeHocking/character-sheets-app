@@ -13,6 +13,6 @@ class Training extends Model
     
     // Get this training's reference
     public function trainingRef() {
-        return $this->belongsTo('CharacterSheets\Models\Instances\TrainingRef');
+        return $this->belongsTo('CharacterSheets\Models\References\TrainingRef');
     }
 }

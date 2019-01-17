@@ -13,6 +13,6 @@ class Skill extends Model
     
     // Get this skill's reference
     public function skillRef() {
-        return $this->hasOne('CharacterSheets\Models\Instances\SkillRef');
+        return $this->hasOne('CharacterSheets\Models\References\SkillRef');
     }
 }

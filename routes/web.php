@@ -30,9 +30,12 @@ Route::get('/character/create', 'CharacterController@new')
 Route::post('/user/profile/{user}', 'CharacterController@create')
     ->name('character.store');
     
-Route::get('character/sheet', 'CharacterController@show')
+Route::get('/character/sheet/{character}', 'CharacterController@show')
     ->name('character.sheet.show')
     ->middleware('auth');
+
+Route::post('/user/profile/{user}', 'CharacterController@update')
+    ->name('character.update');
     
 Route::post('character/update', 'CharacterController@update')
     ->name('character.sheet.update')

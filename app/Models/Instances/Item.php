@@ -13,6 +13,6 @@ class Item extends Model
     
     // Get this item's reference
     public function itemRef() {
-        return $this->belongsTo('CharacterSheets\Models\Instances\ItemRef');
+        return $this->belongsTo('CharacterSheets\Models\References\ItemRef');
     }
 }

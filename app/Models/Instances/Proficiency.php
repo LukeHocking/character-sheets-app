@@ -13,6 +13,6 @@ class Proficiency extends Model
     
     // Get this proficiency's category
     public function category() {
-        return $this->hasOne('CharacterSheets\Models\Instances\Category');
+        return $this->hasOne('CharacterSheets\Models\References\Category');
     }
 }

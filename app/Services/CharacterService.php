@@ -49,8 +49,8 @@ class CharacterService
 	public function update(CharacterFormRequest $request, $id)
 	{
         $attributes = $request->all();
-          
-        return $this->character->update($id, $attributes);
+        
+		$result = $this->character->update($attributes);
 	}
 	
 	public function delete($id)
@@ -62,8 +62,14 @@ class CharacterService
 	
 	public function show($id)
 	{
-        $character = $this->character->find($id);
-        return view('/character/show', ['character', $character]);
+		
+        return view('/character/sheet', [
+        	'character'=> $this->character->find($id),
+        	'categories'=> $this->categories,
+        	'trainings'=> $this->trainingRefs,
+        	'skills'=> $this->skillRefs,
+        	'items'=> $this->itemRefs
+        ]);
 	}
 	
 	public function new() 

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Character extends Model
 {
     // Default attributes
+    protected $guarded = ['id'];
+    
     protected $fillable = [
         'name', 'description', 
         'constitution', 'strength', 'dexterity',

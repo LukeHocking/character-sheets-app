@@ -39,13 +39,13 @@ class CharacterController extends Controller
     
     public function read ($id)
     {
-        $post = $this->characterservice->read($id);
-        return  view('edit', compact('post'));
+        $character = $this->characterservice->read($id);
+        return view('character.sheet.show')->with('character', $character);
     }
     
     public function update(CharacterFormRequest $request, $id)
     {
-        $post = $this->characterservice->update($request, $id);
+        $this->characterservice->update($request, $id);
         return redirect()->route('profile', ['user' => Auth::id()])
             ->with(['status' => 'Character Created Successfully']);
     }
@@ -61,7 +61,8 @@ class CharacterController extends Controller
     
     public function show($id)
     {
-        return $this->characterservice->show($id);
+        $character = $this->characterservice->show($id);
+        return view('/character/sheet')->with(['character' => $character]);
     }
     
     public function new()

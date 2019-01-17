@@ -5,12 +5,24 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                @if (isset($character->name))
                 <div class="card-header">Edit Character - {{$character->name}}</div>
 
                 <div class="card-body container">
-                    <form method="POST" action="/character/update">
-                        @csrf
-                        <input type="hidden" name="character_id" value="{{$character->id}}">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                    <form method="POST" action="{{ route('character.update', ['user', Auth::id()]) }}">
+                    @csrf
+                        <input type='hidden' name='user_id' value='{{Auth::id()}}'>
+                        <input type="hidden" name="id" value="{{$character->id}}">
                         
                         <div class="row">
                             <div class="column p-1 w-100">
@@ -185,6 +197,7 @@
                     </form>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
